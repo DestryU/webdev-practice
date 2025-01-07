@@ -1,12 +1,13 @@
 import express, { Request, Response } from 'express'
-import {supabase} from './supaClient'
+import cors from 'cors'
 //////////////////////////
 import addCharacterRouter from './apis/addCharacter/router'
 
 
 const server = express()
-const port = 3000
+const port = 5000
 
+server.use(cors())
 server.use(express.json())
 
 server.use('/api', addCharacterRouter)
